@@ -15,9 +15,8 @@ Graphs
 
 Outputs
 -------------
-    [+] Predicted Y mean:  50.8628351062
-	[+] Actual Y mean:  51.2050510983
-	[-] Absolute mean error:  0.34221599209
+    [+] Accuracy:  0.988801444433
+
 
 
 ----------

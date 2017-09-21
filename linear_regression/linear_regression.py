@@ -12,12 +12,12 @@ train_data = train_data.dropna()
 test_data = test_data.dropna()
 
 # X and Y columns from test data
-x_test = test_data.as_matrix(['x'])
-y_test = test_data.as_matrix(['y'])
+x_test = test_data.iloc[:, [0]]
+y_test = test_data.iloc[:, [1]]
 
 # X and Y columns from training data
-x = train_data.as_matrix(['x'])
-y = train_data.as_matrix(['y'])
+x = train_data.iloc[:, [0]]
+y = train_data.iloc[:, [1]]
 
 # Fitting model to X and Y of training data
 model = LinearRegression()
@@ -45,6 +45,4 @@ plt.show()
 pred_y_mean = np.mean(predictions)
 actual_y_mean = np.mean(y_test)
 
-print("[+] Predicted Y mean: ", pred_y_mean)
-print("[+] Actual Y mean: ", actual_y_mean)
-print("[-] Absolute mean error: ", actual_y_mean - pred_y_mean)
+print("[+] Accuracy: ", model.score(x_test, y_test))
